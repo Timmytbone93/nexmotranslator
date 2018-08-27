@@ -31,22 +31,11 @@ app.use(cors(corsOption));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
-//Set Static Folder
-app.use(express.static(path.join(__dirname,'public')));
 
 
-app.use('/api',require('./routes/index'));
+app.get('/',function(req,res){
 
+  res.send("HI");
 
-/*app.use(express.static(path.join(__dirname,'/client/build')));
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});*/
+});
 
-
-var server = http.createServer(app);
-//var secureServer = https.createServer(options,app);
-
-//secureServer.listen(443);
-server.listen(3001);
-//server.listen(80);
