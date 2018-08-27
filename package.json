@@ -7,7 +7,7 @@
     "nodemon": "^1.18.3"
   },
   "scripts": {
-   
-    "start":"node server.js"
+
+    "server": "nodemon server.js"
   }
 }
