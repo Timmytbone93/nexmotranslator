@@ -10,6 +10,7 @@ var cors = require('cors');
 //Init App
 var app = express();
 
+var port = process.env.PORT || 3000; 
 
 var corsOption = {
   origin: true,
@@ -36,6 +37,12 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.get('/',function(req,res){
 
   res.send("HI");
+
+});
+
+app.listen(port,function(req,res){
+
+  consoloe.log(res);
 
 });
 
