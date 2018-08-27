@@ -33,9 +33,20 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 app.use(express.static(__dirname + '/public'));
 
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('client/build'));
+}
+
+
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
 app.get('/',function(req,res){
 
   res.send("HI");
+  console.log("hit man");
 
 });
 
