@@ -7,7 +7,7 @@
     "nodemon": "^1.18.3"
   },
   "scripts": {
-    "client": "cd client && yarn start",
-    "server": "nodemon server.js"
+   
+    "start":"node server.js"
   }
 }
