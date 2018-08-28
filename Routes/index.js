@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Nexmo = require('nexmo');
-const config = require('../config');
+const config = require('../config/config');
 
 
 router.get('/', function (req, res) {
