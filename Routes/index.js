@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Nexmo = require('nexmo');
+const config = require('../config');
 
 
 router.get('/', function (req, res) {
@@ -17,9 +18,9 @@ router.get('/translate', function (req, res) {
 
     //this will simulate the sending of a tanslated sms via nexmo sms api.
     const nexmo = new Nexmo({
-        apiKey: "d028ff0f",
-        apiSecret: "KOmzKrspClqfex03"//,
-        //msTranslateKey:"b548c1a406e14522912b451cdead22c4"
+        apiKey: config.userData.apiKey,
+        apiSecret: config.userData.apiSecret,
+        msTranslateKey:config.userData.msTranslateKey
       });
     
      res.send("Translate");
